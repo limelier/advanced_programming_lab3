@@ -5,6 +5,7 @@ package item;
  */
 public class Food implements Item {
     private int weight;
+    private String name;
     /**
      * Gets the profit factor of this food.
      *
@@ -21,10 +22,20 @@ public class Food implements Item {
      *
      * @param weight strictly positive
      */
-    public Food(int weight) {
+    public Food(String name, int weight) {
         if (weight <= 0) {
             throw new IllegalArgumentException("Attempted to create Food with zero or negative weight.");
         }
+        this.name = name;
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                name +
+                ", w=" + weight +
+                ", v=" + weight * 2 +
+                '}';
     }
 }

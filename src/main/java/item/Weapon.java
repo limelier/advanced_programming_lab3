@@ -32,4 +32,13 @@ public class Weapon implements Item {
         this.value = value;
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                type +
+                ", value=" + value +
+                ", weight=" + weight +
+                '}';
+    }
 }
