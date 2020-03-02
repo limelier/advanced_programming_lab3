@@ -8,19 +8,19 @@ public class Weapon implements Item {
     private int value;
     private int weight;
 
-    /**
-     * Gets the profit factor, or weight-to-value ratio, of this item.
-     *
-     * @return the profit factor
-     */
-    @Override
-    public double profitFactor() {
-        return (double)value / (double)weight;
-    }
-
     @Override
     public String getName() {
         return type.name();
+    }
+
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 
     /**

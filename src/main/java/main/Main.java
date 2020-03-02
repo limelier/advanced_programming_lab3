@@ -1,10 +1,10 @@
 package main;
 
-import item.*;
+import item.Book;
+import item.Food;
+import item.Weapon;
+import item.WeaponType;
 import knapsack.Problem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Iacobescu Tudor

@@ -11,6 +11,12 @@ public interface Item {
      *
      * @return the profit factor
      */
-    double profitFactor();
+    default double profitFactor() // TODO: default, like in compulsory specs, for full points (only got partial points)
+    {
+        return getWeight() / (double) getValue();
+    }
+
     String getName();
+    double getWeight();
+    int getValue();
 }

@@ -22,6 +22,16 @@ public class Food implements Item {
         return name;
     }
 
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+
+    @Override
+    public int getValue() {
+        return 2 * weight;
+    }
+
     /**
      * Create a food item, valued at twice its given weight.
      *
@@ -40,7 +50,7 @@ public class Food implements Item {
         return "Food{" +
                 name +
                 ", w=" + weight +
-                ", v=" + weight * 2 +
+                ", v=" + getValue() +
                 '}';
     }
 }

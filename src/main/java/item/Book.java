@@ -8,22 +8,19 @@ public class Book implements Item {
     private int value;
     private String name;
 
-    /**
-     * Gets the profit factor of this book.
-     * <p>
-     * The weight of the book is taken to be the number of pages / 100.
-     *
-     * @return the profit factor, a weight-to-value ratio
-     */
-    @Override
-    public double profitFactor() {
-        double weight = (double) pages / 100;
-        return value / weight;
-    }
-
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public double getWeight() {
+        return (double) pages / 100;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 
     /**
@@ -43,7 +40,7 @@ public class Book implements Item {
     public String toString() {
         return "Book{" +
                 name +
-                ", w=" + (double) pages / 100 +
+                ", w=" + getWeight() +
                 ", v=" + value +
                 '}';
     }
