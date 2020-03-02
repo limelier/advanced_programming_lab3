@@ -3,6 +3,7 @@ package knapsack;
 import item.Item;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Problem {
@@ -17,7 +18,9 @@ public class Problem {
      */
     public Problem(int knapsackCapacity, Item ...items) {
         this.knapsack = new Knapsack(knapsackCapacity);
-        this.itemList = Arrays.asList(items);
+        List<Item> itemList = Arrays.asList(items);
+        itemList.sort(Comparator.comparing(Item::getName));
+        this.itemList = itemList;
     }
 
     @Override
