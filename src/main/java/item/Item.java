@@ -9,5 +9,5 @@ public interface Item {
      *
      * @return the profit factor
      */
-    public double profitFactor();
+    double profitFactor();
 }
