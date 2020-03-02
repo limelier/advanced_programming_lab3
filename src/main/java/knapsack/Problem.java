@@ -11,10 +11,10 @@ public class Problem {
     List<Item> itemList;
 
     /**
-     * Create a knapsack problem, with a knapsack of the given capacity and a list of items.
+     * Create a knapsack problem, with a knapsack of the given capacity and a list of items, sorted by name.
      *
      * @param knapsackCapacity the capacity of the knapsack
-     * @param items the items presented by the problem, sorted upon insertion
+     * @param items the items presented by the problem
      */
     public Problem(int knapsackCapacity, Item ...items) {
         this.knapsack = new Knapsack(knapsackCapacity);
