@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Book implements Item {
+public class Book extends Item {
     private int pages;
     private int value;
     private String name;
@@ -34,14 +34,5 @@ public class Book implements Item {
         this.name = name;
         this.pages = pages;
         this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                name +
-                ", w=" + getWeight() +
-                ", v=" + value +
-                '}';
     }
 }

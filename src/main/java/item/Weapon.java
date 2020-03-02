@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Weapon implements Item {
+public class Weapon extends Item {
     private WeaponType type;
     private int value;
     private int weight;
@@ -36,14 +36,5 @@ public class Weapon implements Item {
         this.type = type;
         this.value = value;
         this.weight = weight;
-    }
-
-    @Override
-    public String toString() {
-        return "Weapon{" +
-                type +
-                ", value=" + value +
-                ", weight=" + weight +
-                '}';
     }
 }

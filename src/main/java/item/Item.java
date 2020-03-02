@@ -3,20 +3,34 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public interface Item {
-    // using an abstract class instead of an interface to implement compareTo, for DRY's sake
+public abstract class Item {
+    // using an abstract class instead of an interface to implement toString, for DRY's sake
 
     /**
      * Gets the profit factor, usually the value-to-weight ratio, of this item.
      *
      * @return the profit factor
      */
-    default double profitFactor() // TODO: default, like in compulsory specs, for full points (only got partial points)
+    public double profitFactor() // in an interface, this would be default
     {
         return getWeight() / (double) getValue();
     }
 
-    String getName();
-    double getWeight();
-    int getValue();
+    public abstract String getName();
+
+    public abstract double getWeight();
+
+    public abstract int getValue();
+
+    /**
+     * @return a string with the item's name, weight and value
+     */
+    @Override
+    public String toString() {
+        return "{" +
+                this.getName() +
+                ", w=" + this.getWeight() +
+                ", v=" + this.getValue() +
+                "}";
+    }
 }

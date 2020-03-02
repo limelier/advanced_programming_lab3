@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Food implements Item {
+public class Food extends Item {
     private int weight;
     private String name;
     /**
@@ -43,14 +43,5 @@ public class Food implements Item {
         }
         this.name = name;
         this.weight = weight;
-    }
-
-    @Override
-    public String toString() {
-        return "Food{" +
-                name +
-                ", w=" + weight +
-                ", v=" + getValue() +
-                '}';
     }
 }
