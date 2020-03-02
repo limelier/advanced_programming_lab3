@@ -26,11 +26,6 @@ public class Book implements Item {
         return name;
     }
 
-    @Override
-    public int compareTo(Item other) {
-        return name.compareTo(other.getName());
-    }
-
     /**
      * @param pages the number of pages in the book, strictly positive
      * @param value the value of the book

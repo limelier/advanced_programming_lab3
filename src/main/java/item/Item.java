@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public abstract class Item {
+public interface Item {
     // using an abstract class instead of an interface to implement compareTo, for DRY's sake
 
     /**
@@ -11,9 +11,6 @@ public abstract class Item {
      *
      * @return the profit factor
      */
-    abstract double profitFactor();
-    abstract String getName();
-    int compareTo(Item other) {
-        return this.getName().compareTo(other.getName());
-    }
+    double profitFactor();
+    String getName();
 }
