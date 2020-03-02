@@ -24,6 +24,7 @@ public class Main {
         Knapsack knapsack = new Knapsack(10);
         knapsack.insertItem(food1);
         knapsack.insertItem(book2);
+        knapsack.insertItem(weapon);
 
         System.out.println(knapsack);
     }

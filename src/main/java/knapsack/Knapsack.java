@@ -2,7 +2,10 @@ package knapsack;
 
 import item.Item;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author Iacobescu Tudor
@@ -10,6 +13,7 @@ import java.util.*;
 public class Knapsack {
     private List<Item> itemList;
     private int capacity;
+    private int taken;
 
     /**
      * @param capacity the capacity of the knapsack, strictly positive
@@ -27,11 +31,17 @@ public class Knapsack {
     }
 
     public void insertItem(Item item) {
+        if (item.getWeight() > capacity - taken) {
+            throw new IllegalArgumentException(
+                    "Attempted to insert item into knapsack that would put it over capacity."
+            );
+        }
         int index = Collections.binarySearch(itemList, item, Comparator.comparing(Item::getName));
         if (index < 0) {
             index = -index - 1; // convert invalid index (item not found) to valid index (where to put the item)
         }
         itemList.add(index, item);
+        taken += item.getWeight();
     }
 
     @Override
