@@ -4,6 +4,7 @@ import item.Book;
 import item.Food;
 import item.Weapon;
 import item.WeaponType;
+import knapsack.Knapsack;
 import knapsack.Problem;
 
 /**
@@ -19,5 +20,11 @@ public class Main {
 
         Problem problem = new Problem(10, book1, book2, food1, food2, weapon);
         System.out.println(problem);
+
+        Knapsack knapsack = new Knapsack(10);
+        knapsack.insertItem(food1);
+        knapsack.insertItem(book2);
+
+        System.out.println(knapsack);
     }
 }

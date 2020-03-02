@@ -2,10 +2,7 @@ package knapsack;
 
 import item.Item;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Iacobescu Tudor
@@ -22,6 +19,7 @@ public class Knapsack {
             throw new IllegalArgumentException("Attempted to create Knapsack of zero or negative capacity.");
         }
         this.capacity = capacity;
+        this.itemList = new ArrayList<>();
     }
 
     public int getCapacity() {
@@ -34,5 +32,13 @@ public class Knapsack {
             index = -index - 1; // convert invalid index (item not found) to valid index (where to put the item)
         }
         itemList.add(index, item);
+    }
+
+    @Override
+    public String toString() {
+        return "Knapsack{" +
+                "capacity=" + capacity +
+                ", items=" + itemList +
+                '}';
     }
 }
