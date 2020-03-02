@@ -2,6 +2,9 @@ package knapsack;
 
 import item.Item;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -23,5 +26,13 @@ public class Knapsack {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public void insertItem(Item item) {
+        int index = Collections.binarySearch(itemList, item, Comparator.comparing(Item::getName));
+        if (index < 0) {
+            index = -index - 1; // convert invalid index (item not found) to valid index (where to put the item)
+        }
+        itemList.add(index, item);
     }
 }

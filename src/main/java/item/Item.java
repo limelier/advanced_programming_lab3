@@ -11,7 +11,7 @@ public abstract class Item {
      *
      * @return the profit factor
      */
-    public double profitFactor() // in an interface, this would be default
+    public double profitFactor() // TODO: complete compulsory score - in an interface, this would be default
     {
         return getWeight() / (double) getValue();
     }
