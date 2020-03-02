@@ -13,7 +13,7 @@ import java.util.List;
 public class Knapsack {
     private List<Item> itemList;
     private int capacity;
-    private int taken;
+    private double taken;
 
     /**
      * @param capacity the capacity of the knapsack, strictly positive
