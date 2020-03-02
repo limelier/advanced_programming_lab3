@@ -17,6 +17,11 @@ public class Food implements Item {
         return 2;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     /**
      * Create a food item, valued at twice its given weight.
      *

@@ -10,4 +10,5 @@ public interface Item {
      * @return the profit factor
      */
     double profitFactor();
+    String getName();
 }

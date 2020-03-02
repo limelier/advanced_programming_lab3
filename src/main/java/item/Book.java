@@ -21,6 +21,11 @@ public class Book implements Item {
         return value / weight;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     /**
      * @param pages the number of pages in the book, strictly positive
      * @param value the value of the book

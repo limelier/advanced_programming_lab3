@@ -18,6 +18,11 @@ public class Weapon implements Item {
         return (double)value / (double)weight;
     }
 
+    @Override
+    public String getName() {
+        return type.name();
+    }
+
     /**
      *
      * @param type the type of the weapon
