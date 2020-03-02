@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Weapon implements Item {
+public class Weapon extends Item {
     private WeaponType type;
     private int value;
     private int weight;

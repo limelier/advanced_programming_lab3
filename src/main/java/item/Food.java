@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Food implements Item {
+public class Food extends Item {
     private int weight;
     private String name;
     /**
@@ -18,7 +18,7 @@ public class Food implements Item {
     }
 
     @Override
-    public String getName() {
+    String getName() {
         return name;
     }
 
