@@ -26,7 +26,7 @@ public class Book implements Item {
      */
     public Book(int pages, int value) throws IllegalArgumentException {
         if (pages <= 0) {
-            throw new IllegalArgumentException("Attempted to create book with zero or negative pages!");
+            throw new IllegalArgumentException("Attempted to create Book with zero or negative pages.");
         }
         this.pages = pages;
         this.value = value;
