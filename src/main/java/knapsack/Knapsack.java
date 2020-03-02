@@ -8,8 +8,8 @@ import java.util.List;
  * @author Iacobescu Tudor
  */
 public class Knapsack {
-    List<Item> itemList;
-    int capacity;
+    private List<Item> itemList;
+    private int capacity;
 
     /**
      * @param capacity the capacity of the knapsack, strictly positive
@@ -19,5 +19,9 @@ public class Knapsack {
             throw new IllegalArgumentException("Attempted to create Knapsack of zero or negative capacity.");
         }
         this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 }

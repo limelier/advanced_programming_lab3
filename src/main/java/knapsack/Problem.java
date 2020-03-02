@@ -19,4 +19,12 @@ public class Problem {
         this.knapsack = new Knapsack(knapsackCapacity);
         this.itemList = Arrays.asList(items);
     }
+
+    @Override
+    public String toString() {
+        return "Problem{" +
+                "knapsackCapacity=" + knapsack.getCapacity() +
+                ", items=" + itemList +
+                '}';
+    }
 }
