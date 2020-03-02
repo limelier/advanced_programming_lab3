@@ -1,3 +1,5 @@
+package item;
+
 /**
  * @author Iacobescu Tudor
  */
@@ -7,13 +9,14 @@ public class Book implements Item {
 
     /**
      * Gets the profit factor of this book.
-     *
+     * <p>
      * The weight of the book is taken to be the number of pages / 100
+     *
      * @return the profit factor, a weight-to-value ratio
      */
     @Override
     public double profitFactor() {
-        double weight = (double)pages / 100;
+        double weight = (double) pages / 100;
         return value / weight;
     }
 
