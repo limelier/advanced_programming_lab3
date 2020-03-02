@@ -10,7 +10,7 @@ public class Book implements Item {
     /**
      * Gets the profit factor of this book.
      * <p>
-     * The weight of the book is taken to be the number of pages / 100
+     * The weight of the book is taken to be the number of pages / 100.
      *
      * @return the profit factor, a weight-to-value ratio
      */
