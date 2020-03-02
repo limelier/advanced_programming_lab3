@@ -21,10 +21,10 @@ public class Book implements Item {
     }
 
     /**
-     * @param pages the number of pages, cannot be zero
+     * @param pages the number of pages in the book, strictly positive
      * @param value the value of the book
      */
-    public Book(int pages, int value) throws IllegalArgumentException {
+    public Book(int pages, int value) {
         if (pages <= 0) {
             throw new IllegalArgumentException("Attempted to create Book with zero or negative pages.");
         }

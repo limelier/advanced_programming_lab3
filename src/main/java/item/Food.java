@@ -1,5 +1,8 @@
 package item;
 
+/**
+ * @author Iacobescu Tudor
+ */
 public class Food implements Item {
     private int weight;
     /**
@@ -12,8 +15,13 @@ public class Food implements Item {
     public double profitFactor() {
         return 2;
     }
-    
-    public Food(int weight) throws IllegalArgumentException {
+
+    /**
+     * Create a food item, valued at twice its given weight.
+     *
+     * @param weight strictly positive
+     */
+    public Food(int weight) {
         if (weight <= 0) {
             throw new IllegalArgumentException("Attempted to create Food with zero or negative weight.");
         }
