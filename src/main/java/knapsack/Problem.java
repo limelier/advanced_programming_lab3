@@ -14,7 +14,7 @@ public class Problem {
      * Create a knapsack problem, with a knapsack of the given capacity and a list of items.
      *
      * @param knapsackCapacity the capacity of the knapsack
-     * @param items the items presented by the problem
+     * @param items the items presented by the problem, sorted upon insertion
      */
     public Problem(int knapsackCapacity, Item ...items) {
         this.knapsack = new Knapsack(knapsackCapacity);
