@@ -9,6 +9,9 @@ import item.WeaponType;
 import knapsack.Knapsack;
 import knapsack.Problem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Iacobescu Tudor
  */
@@ -23,9 +26,8 @@ public class Main {
         Problem problem = new Problem(10, book1, book2, food1, food2, weapon);
         System.out.println(problem);
 
-        Algorithm alg = new GreedyApproximation();
-        Knapsack knapsack = alg.solve(problem);
-        System.out.println("Greedy algorithm solution:");
-        System.out.println(knapsack);
+        Algorithm alg = new GreedyApproximation(problem);
+        alg.solve();
+        System.out.println("Greedy algorithm solution:\n" + alg.result());
     }
 }
