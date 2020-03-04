@@ -44,10 +44,18 @@ public class Knapsack {
         taken += item.getWeight();
     }
 
+    public int getValue() {
+        int value = 0;
+        for (Item item : itemList) {
+            value += item.getValue();
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
         return "Knapsack{" +
-                "capacity=" + capacity +
+                "value=" + getValue() +
                 ", items=" + itemList +
                 '}';
     }
