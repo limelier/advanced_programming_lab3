@@ -26,8 +26,8 @@ public class Knapsack {
         this.itemList = new ArrayList<>();
     }
 
-    public int getCapacity() {
-        return capacity;
+    public boolean canFit(Item item) {
+        return capacity - taken >= item.getWeight();
     }
 
     public void insertItem(Item item) {
