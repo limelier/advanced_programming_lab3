@@ -7,8 +7,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Problem {
-    int capacity;
-    List<Item> itemList;
+    private int capacity;
+    private List<Item> itemList;
 
     /**
      * Create a knapsack problem, with a knapsack of the given capacity and a list of items, sorted by name.
@@ -21,6 +21,14 @@ public class Problem {
         List<Item> itemList = Arrays.asList(items);
         itemList.sort(Comparator.comparing(Item::getName));
         this.itemList = itemList;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
+    }
+
+    public List<Item> getItemList() {
+        return this.itemList;
     }
 
     @Override
