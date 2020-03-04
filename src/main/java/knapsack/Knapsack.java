@@ -30,7 +30,7 @@ public class Knapsack {
         return capacity - taken >= item.getWeight();
     }
 
-    public void insertItem(Item item) {
+    public void insert(Item item) {
         if (item.getWeight() > capacity - taken) {
             throw new IllegalArgumentException(
                     "Attempted to insert item into knapsack that would put it over capacity."
