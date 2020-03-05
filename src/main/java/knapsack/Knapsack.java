@@ -28,6 +28,12 @@ public class Knapsack {
         this.itemList = new ArrayList<>();
     }
 
+    public Knapsack (Knapsack other) {
+        capacity = other.capacity;
+        taken = other.taken;
+        itemList = new ArrayList<>(other.itemList);
+    }
+
     public boolean canFit(Item item) {
         return capacity - taken >= item.getWeight();
     }
