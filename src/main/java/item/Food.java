@@ -13,7 +13,7 @@ public class Food extends Item {
      * @return the profit factor, always 2
      */
     @Override
-    public double profitFactor() {
+    public int profitFactor() {
         return 2;
     }
 
@@ -23,7 +23,7 @@ public class Food extends Item {
     }
 
     @Override
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

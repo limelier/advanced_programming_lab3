@@ -14,7 +14,7 @@ public class Weapon extends Item {
     }
 
     @Override
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

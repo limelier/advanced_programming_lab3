@@ -11,14 +11,14 @@ public abstract class Item {
      *
      * @return the profit factor
      */
-    public double profitFactor() // TODO: complete compulsory score - in an interface, this would be default
+    public int profitFactor()
     {
-        return getWeight() / (double) getValue();
+        return getWeight() / getValue();
     }
 
     public abstract String getName();
 
-    public abstract double getWeight();
+    public abstract int getWeight();
 
     public abstract int getValue();
 
