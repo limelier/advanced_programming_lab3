@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Book extends Item {
+public class Book extends ItemBase implements Item {
     /**
      * The profit factor of a book with zero effective weight.
      */

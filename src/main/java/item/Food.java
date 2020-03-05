@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Food extends Item {
+public class Food extends ItemBase implements Item {
     private int weight;
     private String name;
     /**
