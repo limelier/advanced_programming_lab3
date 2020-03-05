@@ -28,8 +28,8 @@ public class Knapsack {
         this.itemList = new ArrayList<>();
     }
 
-    public Knapsack (Knapsack other) {
-        capacity = other.capacity;
+    public Knapsack (Knapsack other, int newCapacity) {
+        capacity = newCapacity;
         taken = other.taken;
         itemList = new ArrayList<>(other.itemList);
     }
