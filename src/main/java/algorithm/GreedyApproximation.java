@@ -8,18 +8,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class GreedyApproximation implements Algorithm {
-    Problem problem;
-    Knapsack knapsack;
-
+public class GreedyApproximation extends AlgorithmBase implements Algorithm {
     /**
      * Instantiate the algorithm on a certain problem.
      *
      * @param problem the problem to solve
      */
     public GreedyApproximation(Problem problem) {
-        this.problem = problem;
-        this.knapsack = new Knapsack(problem.getCapacity());
+        super(problem);
     }
 
     /**
@@ -29,8 +25,6 @@ public class GreedyApproximation implements Algorithm {
      */
     @Override
     public void solve() {
-        this.knapsack = new Knapsack(this.problem.getCapacity());
-        List<Item> itemList = new ArrayList<>(this.problem.getItemList());
         itemList.sort(Comparator.comparing(Item::profitFactor)); // sorts descending
 
         for (Item item : itemList) {
@@ -38,10 +32,5 @@ public class GreedyApproximation implements Algorithm {
                 knapsack.insert(item);
             }
         }
-    }
-
-    @Override
-    public Knapsack result() {
-        return this.knapsack;
     }
 }
