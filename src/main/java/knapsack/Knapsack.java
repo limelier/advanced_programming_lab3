@@ -16,11 +16,13 @@ public class Knapsack {
     private double taken;
 
     /**
-     * @param capacity the capacity of the knapsack, strictly positive
+     * @param capacity the capacity of the knapsack, a natural number
+     *
+     * A knapsack with zero capacity can only hold items of zero weight.
      */
     public Knapsack(int capacity) {
-        if (capacity <= 0) {
-            throw new IllegalArgumentException("Attempted to create Knapsack of zero or negative capacity.");
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Attempted to create Knapsack of negative capacity.");
         }
         this.capacity = capacity;
         this.itemList = new ArrayList<>();
