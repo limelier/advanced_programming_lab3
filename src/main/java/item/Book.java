@@ -49,7 +49,7 @@ public class Book extends ItemBase implements Item {
      * @return the profit factor
      */
     @Override
-    public int profitFactor() {
+    public double profitFactor() {
 
         int weight = getWeight();
         if (weight == 0) {

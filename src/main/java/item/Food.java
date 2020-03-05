@@ -13,7 +13,7 @@ public class Food extends ItemBase implements Item {
      * @return the profit factor, always 2
      */
     @Override
-    public int profitFactor() {
+    public double profitFactor() {
         return 2;
     }
 
