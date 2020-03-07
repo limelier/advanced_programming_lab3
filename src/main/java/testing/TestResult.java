@@ -1,5 +1,8 @@
 package testing;
 
+/**
+ * @author Iacobescu Tudor
+ */
 public class TestResult {
     private String name;
     private long time;

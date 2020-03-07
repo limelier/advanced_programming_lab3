@@ -8,6 +8,9 @@ import knapsack.Problem;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Iacobescu Tudor
+ */
 public class Test {
     private List<Algorithm> algorithms;
     private List<TestResult> results;
