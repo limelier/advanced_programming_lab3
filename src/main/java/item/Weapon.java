@@ -4,16 +4,16 @@ package item;
  * @author Iacobescu Tudor
  */
 public class Weapon extends ItemBase implements Item {
-    public enum material {
+    public enum Material {
         Wood, Stone, Iron, Gold, Diamond, Netherite
     }
 
-    public enum type {
+    public enum Type {
         Sword, Axe, Pickaxe, Shovel, Hoe
     }
 
-    private Weapon.type type;
-    private Weapon.material material;
+    private Type type;
+    private Material material;
     private int value;
     private int weight;
 
@@ -38,7 +38,7 @@ public class Weapon extends ItemBase implements Item {
      * @param value  the value of the weapon
      * @param weight the weight of the weapon, strictly positive
      */
-    public Weapon(Weapon.material material, Weapon.type type, int value, int weight) {
+    public Weapon(Material material, Type type, int value, int weight) {
         if (weight <= 0) {
             throw new IllegalArgumentException("Attempted to create Weapon with zero or negative weight.");
         }
