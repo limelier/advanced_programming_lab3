@@ -1,9 +1,17 @@
 package testing;
 
 public class TestResult {
-    String name;
-    long time;
-    int value;
+    private String name;
+    private long time;
+    private int value;
+    
+    public long getTime() {
+        return time;
+    }
+
+    public int getValue() {
+        return value;
+    }
 
     public TestResult(String name, long time, int value) {
         this.name = name;
