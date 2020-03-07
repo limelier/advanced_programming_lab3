@@ -9,12 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
-    private Problem problem;
     private List<Algorithm> algorithms;
     private List<TestResult> results;
 
     public Test(Problem problem) {
-        this.problem = problem;
         this.algorithms = new ArrayList<>();
         algorithms.add(new GreedyApproximation(problem));
         algorithms.add(new DynamicProgramming(problem));
