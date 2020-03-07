@@ -2,12 +2,16 @@ package testing;
 
 import item.Book;
 import item.Food;
+import item.Item;
+import item.Weapon;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
-public class ProblemGenerator {
-    private static final List<Book> books = Arrays.asList(
+public class Utils {
+    static final List<Book> books = Arrays.asList(
             new Book("Aqua Affinity", 120, 2),
             new Book("Bane of Arthropods", 511, 5),
             new Book("Blast Protection", 450, 2),
@@ -46,9 +50,9 @@ public class ProblemGenerator {
             new Book("Sweeping Edge", 510, 2),
             new Book("Thorns", 314, 1),
             new Book("Unbreaking", 490, 5)
-            );
+    );
 
-    private static final List<Food> foods = Arrays.asList(
+    static final List<Food> foods = Arrays.asList(
             new Food("Beetroot", 1),
             new Food("Dried Kelp", 1),
             new Food("Potato", 1),
@@ -91,4 +95,70 @@ public class ProblemGenerator {
             new Food("Rabbit Stew", 10),
             new Food("Cake", 14)
     );
+
+    static final Map<Weapon.Type, Integer> weaponWeights = Map.of(
+            Weapon.Type.Axe, 3,
+            Weapon.Type.Hoe, 2,
+            Weapon.Type.Pickaxe, 3,
+            Weapon.Type.Shovel, 1,
+            Weapon.Type.Sword, 2
+    );
+
+    static final Map<Weapon.Material, Integer> weaponValues = Map.of(
+            Weapon.Material.Wood, 1,
+            Weapon.Material.Stone, 2,
+            Weapon.Material.Iron, 3,
+            Weapon.Material.Gold, 4,
+            Weapon.Material.Diamond, 5,
+            Weapon.Material.Netherite, 6
+    );
+
+    static final Random random = new Random();
+
+    enum Category {
+        Book, Food, Weapon
+    }
+
+    /**
+     * Get a random value of a given enum.
+     * <p>
+     * Code taken from <a href=https://stackoverflow.com/a/14257525>this answer</a> on StackOverflow.
+     *
+     * @param en the enum, given as "TheEnum.class"
+     * @return the random value
+     */
+    static private <T extends Enum<?>> T randomEnum(Class<T> en) {
+        return en.getEnumConstants()[random.nextInt(en.getEnumConstants().length)];
+    }
+
+    /**
+     * Get a random item from a list.
+     *
+     * @param list the list
+     * @return the chosen item
+     */
+    static private <T> T randomListItem(List<T> list) {
+        return list.get(random.nextInt(list.size()));
+    }
+
+    /**
+     * Get a random item of one of the categories.
+     *
+     * @return the random item
+     */
+    static Item randomItem() {
+        Category category = randomEnum(Category.class);
+        switch (category) {
+            case Book:
+                return randomListItem(books);
+            case Food:
+                return randomListItem(foods);
+            case Weapon:
+                Weapon.Material material = randomEnum(Weapon.Material.class);
+                Weapon.Type type = randomEnum(Weapon.Type.class);
+                return new Weapon(material, type, weaponWeights.get(type), weaponValues.get(material));
+            default:
+                throw new Error("Enum value returned by randomEnum was not one of the known options.");
+        }
+    }
 }
