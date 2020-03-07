@@ -4,7 +4,11 @@ public class TestResult {
     private String name;
     private long time;
     private int value;
-    
+
+    public String getName() {
+        return name;
+    }
+
     public long getTime() {
         return time;
     }
