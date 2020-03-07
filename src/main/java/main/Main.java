@@ -6,16 +6,15 @@ import algorithm.GreedyApproximation;
 import item.*;
 import knapsack.Problem;
 import testing.Generator;
+import testing.Test;
 
 /**
  * @author Iacobescu Tudor
  */
 public class Main {
     public static void main(String[] args) {
-        Problem problem = Generator.generateProblem();
-        System.out.println(problem);
-        Algorithm alg1 = new DynamicProgramming(problem);
-        alg1.solve();
-        System.out.println(alg1.result());
+        Test test = new Test(Generator.generateProblem());
+        test.run();
+        System.out.println(test.results());
     }
 }
