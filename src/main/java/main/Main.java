@@ -12,7 +12,7 @@ import testing.Generator;
  */
 public class Main {
     public static void main(String[] args) {
-        Problem problem = Generator.generateProblem(10, 10);
+        Problem problem = Generator.generateProblem();
         System.out.println(problem);
         Algorithm alg1 = new DynamicProgramming(problem);
         alg1.solve();
