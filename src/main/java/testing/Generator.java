@@ -14,4 +14,11 @@ public class Generator {
 
         return new Problem(capacity, itemList);
     }
+
+    public static Problem generateProblem() {
+        int items = Utils.random.nextInt(20);
+        int capacity = Utils.random.nextInt(20);
+
+        return generateProblem(items, capacity);
+    }
 }
