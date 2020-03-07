@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
-    Problem problem;
-    List<Algorithm> algorithms;
-    List<TestResult> results;
+    private Problem problem;
+    private List<Algorithm> algorithms;
+    private List<TestResult> results;
 
     public Test(Problem problem) {
         this.problem = problem;
