@@ -47,7 +47,5 @@ public class Main {
         Algorithm alg4 = new DynamicProgramming(problem2);
         alg4.solve();
         System.out.println("Dynamic programming solution:\n" + alg4.result());
-
-
     }
 }
