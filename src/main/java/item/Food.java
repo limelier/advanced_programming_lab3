@@ -3,7 +3,7 @@ package item;
 /**
  * @author Iacobescu Tudor
  */
-public class Food extends Item {
+public class Food extends ItemBase implements Item {
     private int weight;
     private String name;
     /**
@@ -23,7 +23,7 @@ public class Food extends Item {
     }
 
     @Override
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

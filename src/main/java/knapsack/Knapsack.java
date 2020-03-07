@@ -16,21 +16,29 @@ public class Knapsack {
     private double taken;
 
     /**
-     * @param capacity the capacity of the knapsack, strictly positive
+     * @param capacity the capacity of the knapsack, a natural number
+     *
+     * A knapsack with zero capacity can only hold items of zero weight.
      */
     public Knapsack(int capacity) {
-        if (capacity <= 0) {
-            throw new IllegalArgumentException("Attempted to create Knapsack of zero or negative capacity.");
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Attempted to create Knapsack of negative capacity.");
         }
         this.capacity = capacity;
         this.itemList = new ArrayList<>();
     }
 
-    public int getCapacity() {
-        return capacity;
+    public Knapsack (Knapsack other, int newCapacity) {
+        capacity = newCapacity;
+        taken = other.taken;
+        itemList = new ArrayList<>(other.itemList);
     }
 
-    public void insertItem(Item item) {
+    public boolean canFit(Item item) {
+        return capacity - taken >= item.getWeight();
+    }
+
+    public void insert(Item item) {
         if (item.getWeight() > capacity - taken) {
             throw new IllegalArgumentException(
                     "Attempted to insert item into knapsack that would put it over capacity."
@@ -44,10 +52,18 @@ public class Knapsack {
         taken += item.getWeight();
     }
 
+    public int getValue() {
+        int value = 0;
+        for (Item item : itemList) {
+            value += item.getValue();
+        }
+        return value;
+    }
+
     @Override
     public String toString() {
         return "Knapsack{" +
-                "capacity=" + capacity +
+                "value=" + getValue() +
                 ", items=" + itemList +
                 '}';
     }
