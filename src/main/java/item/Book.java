@@ -56,7 +56,7 @@ public class Book extends ItemBase implements Item {
             return ZERO_WEIGHT_VALUE;
         }
         else {
-            return getValue() / weight;
+            return (double) getValue() / weight;
         }
     }
 }

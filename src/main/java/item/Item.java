@@ -7,7 +7,7 @@ public interface Item {
      * @return the profit factor
      */
     default double profitFactor() {
-        return (double) getWeight() / (double) getValue();
+        return (double) getValue() / (double) getWeight();
     }
 
     String getName();
