@@ -31,7 +31,7 @@ public class TestResult {
         return "{" +
                 "name='" + name + '\'' +
                 ", time=" + time +
-                ", value=" + value +
+                "ns, value=" + value +
                 '}';
     }
 }

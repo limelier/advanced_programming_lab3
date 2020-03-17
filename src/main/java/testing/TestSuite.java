@@ -70,6 +70,7 @@ public class TestSuite {
 
         for (Test test : testList) {
             List<TestResult> results = test.results();
+            System.out.println(results);
             criteria.get(betterTime(results))[0]++;
             criteria.get(betterValue(results))[1]++;
         }
